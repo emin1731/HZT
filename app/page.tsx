@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Navigation } from "@/components/navigation";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { ArrowRight } from "lucide-react";
 
 interface TeamMember {
   id: string;
@@ -61,20 +62,35 @@ export default function WelcomePage() {
     <>
       <Navigation />
       <main className="pt-32">
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-coral-light via-transparent to-gold-light opacity-50" />
+          <div className="container-wide section-padding relative">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-up">
+                Empowering Young Women to{" "}
+                <span className="text-gradient">Shape Tomorrow</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up stagger-1">
+                HZT Girls is a mentorship and education initiative dedicated to
+                unlocking the potential of young women through guidance,
+                learning, and real opportunities.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up stagger-2">
+                <Button variant="hero" size="xl" asChild>
+                  <Link href="#about">
+                    Learn More <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button variant="hero-outline" size="xl" asChild>
+                  <Link href="#team">Meet Our Team</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Hero Section */}
         <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-background px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground text-pretty leading-tight">
-              Empowering Girls Through Mentorship & Education
-            </h1>
-
-            <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto text-pretty leading-relaxed">
-              HZT Girls is a social initiative dedicated to creating meaningful
-              opportunities for girls through mentorship, quality education, and
-              personal development rooted in the Taghiyev legacy of social
-              inclusion.
-            </p>
-
             {/* Core Focus Points */}
             <div className="grid md:grid-cols-3 gap-6 py-12">
               <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
@@ -132,7 +148,7 @@ export default function WelcomePage() {
         </section>
 
         {/* About Section */}
-        <section className="py-24 px-4 bg-background">
+        <section className="py-24 px-4 bg-background" id="about">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="mb-16">
@@ -251,7 +267,7 @@ export default function WelcomePage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-24 px-4 bg-background">
+        <section className="py-24 px-4 bg-background" id="team">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="mb-16">

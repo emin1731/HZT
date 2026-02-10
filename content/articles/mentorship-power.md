@@ -1,5 +1,5 @@
 ---
-title: "The Power of Mentorship in Girls' Education"
+title: "The Power of Mentorship in Girls' Education 1"
 date: "January 2026"
 author: "Amina Khalid"
 description: "How meaningful mentor relationships can transform educational outcomes and build confidence in young women. Research shows mentored students have higher graduation rates and career satisfaction."
