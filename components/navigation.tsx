@@ -22,7 +22,7 @@ export function Navigation() {
             href="/"
             className="font-bold text-lg text-foreground hover:text-primary transition-colors"
           >
-            HZT Girls
+            Future Careers
           </Link>
 
           <div className="flex items-center gap-6">

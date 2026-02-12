@@ -63,7 +63,7 @@ export default function TeamPage() {
         <p className="text-xl text-foreground/80 max-w-3xl text-pretty leading-relaxed">
           We are a dedicated group of educators, mentors, and advocates
           committed to empowering girls through quality mentorship and
-          education. Here are the people who make HZT Girls possible.
+          education. Here are the people who make Future Careers possible.
         </p>
       </section>
 

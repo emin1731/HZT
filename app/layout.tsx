@@ -10,9 +10,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "HZT Girls - Mentorship & Education Initiative",
+  title: "Future Careers - Mentorship & Education Initiative",
   description:
-    "HZT Girls is a social initiative dedicated to girls' mentorship, education, and opportunity, honoring the Taghiyev legacy of social inclusion.",
+    "Future Careers is a social initiative dedicated to girls' mentorship, education, and opportunity, honoring the Taghiyev legacy of social inclusion.",
   generator: "v0.app",
   icons: {
     icon: [

@@ -71,9 +71,9 @@ export default function WelcomePage() {
                 <span className="text-gradient">Shape Tomorrow</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up stagger-1">
-                HZT Girls is a mentorship and education initiative dedicated to
-                unlocking the potential of young women through guidance,
-                learning, and real opportunities.
+                Future Careers is a mentorship and education initiative
+                dedicated to unlocking the potential of young women through
+                guidance, learning, and real opportunities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up stagger-2">
                 <Button variant="hero" size="xl" asChild>
@@ -153,12 +153,13 @@ export default function WelcomePage() {
             {/* Header */}
             <div className="mb-16">
               <h1 className="text-5xl font-bold text-foreground mb-8">
-                About HZT Girls
+                About Future Careers
               </h1>
               <p className="text-xl text-foreground/80 text-pretty leading-relaxed">
-                HZT Girls is rooted in the vision of providing equitable access
-                to education and mentorship. We believe every girl deserves the
-                opportunity to develop her potential and shape her own future.
+                Future Careers is rooted in the vision of providing equitable
+                access to education and mentorship. We believe every girl
+                deserves the opportunity to develop her potential and shape her
+                own future.
               </p>
             </div>
 
@@ -169,7 +170,7 @@ export default function WelcomePage() {
               </h2>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  Founded with a commitment to social inclusion, HZT Girls
+                  Founded with a commitment to social inclusion, Future Careers
                   brings together educators, mentors, and community leaders to
                   create a supportive ecosystem where girls can thrive
                   academically, personally, and professionally.
@@ -257,7 +258,7 @@ export default function WelcomePage() {
               </h2>
               <p className="text-lg text-foreground/80 max-w-2xl mx-auto text-pretty leading-relaxed">
                 Inspired by the pioneering work of social reformers who believed
-                in the transformative power of education, HZT Girls carries
+                in the transformative power of education, Future Careers carries
                 forward the legacy of social inclusion and human development. We
                 honor the vision of those who understood that investing in girls
                 means investing in entire communities.
@@ -277,7 +278,7 @@ export default function WelcomePage() {
               <p className="text-xl text-foreground/80 max-w-3xl text-pretty leading-relaxed">
                 We are a dedicated group of educators, mentors, and advocates
                 committed to empowering girls through quality mentorship and
-                education. Here are the people who make HZT Girls possible.
+                education. Here are the people who make Future Careers possible.
               </p>
             </div>
 

@@ -13,7 +13,7 @@ export function Footer() {
               href="/"
               className="font-bold text-lg text-foreground hover:text-primary transition-colors"
             >
-              HZT Girls
+              Future Careers
             </Link>
             <p className="text-sm text-foreground/70 leading-relaxed">
               Empowering young women through mentorship, education, and
@@ -106,7 +106,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-foreground/60">
-              © {currentYear} HZT Girls. All rights reserved.
+              © {currentYear} Future Careers. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

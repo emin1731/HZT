@@ -6,11 +6,11 @@ export default function AboutPage() {
       {/* Header */}
       <section className="mb-16">
         <h1 className="text-5xl font-bold text-foreground mb-8">
-          About HZT Girls
+          About Future Careers
         </h1>
         <p className="text-xl text-foreground/80 text-pretty leading-relaxed">
-          HZT Girls is rooted in the vision of providing equitable access to
-          education and mentorship. We believe every girl deserves the
+          Future Careers is rooted in the vision of providing equitable access
+          to education and mentorship. We believe every girl deserves the
           opportunity to develop her potential and shape her own future.
         </p>
       </section>
@@ -20,7 +20,7 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold text-foreground">Our Project</h2>
         <div className="space-y-4 text-foreground/80 leading-relaxed">
           <p>
-            Founded with a commitment to social inclusion, HZT Girls brings
+            Founded with a commitment to social inclusion, Future Careers brings
             together educators, mentors, and community leaders to create a
             supportive ecosystem where girls can thrive academically,
             personally, and professionally.
@@ -95,10 +95,10 @@ export default function AboutPage() {
         </h2>
         <p className="text-lg text-foreground/80 max-w-2xl mx-auto text-pretty leading-relaxed">
           Inspired by the pioneering work of social reformers who believed in
-          the transformative power of education, HZT Girls carries forward the
-          legacy of social inclusion and human development. We honor the vision
-          of those who understood that investing in girls means investing in
-          entire communities.
+          the transformative power of education, Future Careers carries forward
+          the legacy of social inclusion and human development. We honor the
+          vision of those who understood that investing in girls means investing
+          in entire communities.
         </p>
       </section>
     </div>
