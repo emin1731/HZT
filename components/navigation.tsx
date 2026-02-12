@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -17,12 +18,14 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-background border-b border-border z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link
-            href="/"
-            className="font-bold text-lg text-foreground hover:text-primary transition-colors"
-          >
-            Future Careers
+        <div className="flex justify-between items-center">
+          <Link href="/" className="hover:text-primary transition-colors">
+            <Image
+              src="/future-careers-logo.png"
+              alt="Logo"
+              width={240}
+              height={36}
+            />
           </Link>
 
           <div className="flex items-center gap-6">
