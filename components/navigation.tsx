@@ -51,8 +51,10 @@ export function Navigation() {
               <Button variant="outline" size="sm" asChild>
                 <Link href="/login">Login</Link>
               </Button>
-              <Button size="sm" asChild>
-                <Link href="/register">Register</Link>
+              <Button variant="default" size="sm" asChild>
+                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfIEbQ0KWf52hWZO_EiquQJ-jJ9_DCv_qtu2Py1uXelpvlV_g/viewform">
+                  Reserve Career Meeting
+                </Link>
               </Button>
             </div>
           </div>

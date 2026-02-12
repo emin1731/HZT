@@ -68,6 +68,17 @@ export interface TeamPage {
   members: TeamMember[];
 }
 
+// Mentor
+export interface Mentor {
+  id: string;
+  name: string;
+  surname: string;
+  description: string;
+  photo?: string;
+  linkedIn?: string;
+  instagram?: string;
+}
+
 // News Item
 export interface NewsItem {
   id: string;
