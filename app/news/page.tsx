@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import { ScrollSection } from "@/components/scroll-section";
 
 const typeConfig = {
   announcement: { label: "Announcement", variant: "default" as const },
@@ -14,7 +15,7 @@ export default function NewsPage() {
   return (
     <div className="">
       {/* Header */}
-      <section className="mb-16">
+      <ScrollSection className="mb-16">
         <h1 className="text-5xl font-bold text-foreground mb-6">
           News & Updates
         </h1>
@@ -22,10 +23,10 @@ export default function NewsPage() {
           Stay informed about our latest announcements, events, and milestones
           as we continue to grow and serve more girls.
         </p>
-      </section>
+      </ScrollSection>
 
       {/* News List */}
-      <section className="space-y-6">
+      <ScrollSection className="space-y-6">
         {posts.map((post) => {
           const typeKey = post.metadata.type ?? "announcement";
           const typeMeta = typeConfig[typeKey] ?? typeConfig.announcement;
@@ -67,10 +68,10 @@ export default function NewsPage() {
             </article>
           );
         })}
-      </section>
+      </ScrollSection>
 
       {/* Social Media */}
-      <section className="mt-16 from-primary/10 to-secondary/10 rounded-lg p-8 border border-primary/20 text-center space-y-6">
+      <ScrollSection className="mt-16 from-primary/10 to-secondary/10 rounded-lg p-8 border border-primary/20 text-center space-y-6">
         <h2 className="text-2xl font-bold text-foreground">Follow Us</h2>
         <p className="text-foreground/80 max-w-2xl mx-auto">
           Stay connected with us on social media for the latest updates and
@@ -146,7 +147,7 @@ export default function NewsPage() {
             </span>
           </a>
         </div>
-      </section>
+      </ScrollSection>
     </div>
   );
 }

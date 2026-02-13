@@ -3,7 +3,8 @@ import { Navigation } from "@/components/navigation";
 import { Button } from "@/components/ui/button";
 import { MentorCard } from "@/components/mentor-card";
 import { TeamMemberCard } from "@/components/team-member-card";
-import { ArrowRight, Instagram, Linkedin } from "lucide-react";
+import { ScrollSection } from "@/components/scroll-section";
+import { ArrowRight, Instagram, Linkedin, Sparkles } from "lucide-react";
 import { Mentor } from "@/lib/types";
 
 interface TeamMember {
@@ -18,57 +19,27 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: "1",
-    name: "Amina Khalid",
+    name: "Ulvi Asadli",
     role: "Founder & Director",
-    bio: "Education activist with 15+ years of experience in community development and girls' empowerment.",
-    initials: "AK",
-    photo:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop",
+    bio: "Description of the student",
+    initials: "UA",
+    photo: "/Ulvi-Asadli.jpeg",
   },
   {
     id: "2",
-    name: "Leila Mansour",
+    name: "Khuraman Guliyeva",
     role: "Program Manager",
-    bio: "Dedicated to curriculum design and mentorship coordination with a background in educational psychology.",
-    initials: "LM",
-    photo:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
+    bio: "Description of the student",
+    initials: "KG",
+    photo: "/Khuraman-Guliyeva.jpeg",
   },
   {
     id: "3",
-    name: "Fatima Hassan",
+    name: "Elshan Huseynzada",
     role: "Community Outreach Lead",
-    bio: "Passionate about building partnerships and connecting girls with resources and opportunities.",
-    initials: "FH",
-    photo:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop",
-  },
-  {
-    id: "4",
-    name: "Noor Al-Rashid",
-    role: "Mentor Coordinator",
-    bio: "Works closely with mentors and students to create meaningful mentoring relationships and growth.",
-    initials: "NR",
-    photo:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop",
-  },
-  {
-    id: "5",
-    name: "Zainab Al-Marri",
-    role: "Skills Development Facilitator",
-    bio: "Leads workshops and training programs focused on leadership, financial literacy, and career skills.",
-    initials: "ZM",
-    photo:
-      "https://images.unsplash.com/photo-1517849845537-1d51a20414de?w=500&h=500&fit=crop",
-  },
-  {
-    id: "6",
-    name: "Hana Mostafa",
-    role: "Research & Impact Officer",
-    bio: "Measures program outcomes and ensures evidence-based strategies for continuous improvement.",
-    initials: "HM",
-    photo:
-      "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&h=500&fit=crop",
+    bio: "Description of the student",
+    initials: "EH",
+    photo: "/Elshan-huseynzada.jpeg",
   },
 ];
 
@@ -77,6 +48,7 @@ const mentors: Mentor[] = [
     id: "1",
     name: "Sarah",
     surname: "Johnson",
+    expertise: "Technology & Software Development",
     description:
       "Tech entrepreneur with 10+ years in software development. Passionate about mentoring young women in STEM fields.",
     photo:
@@ -88,6 +60,7 @@ const mentors: Mentor[] = [
     id: "2",
     name: "Amira",
     surname: "Al-Dosari",
+    expertise: "Business & Entrepreneurship",
     description:
       "Business consultant specializing in startups and women entrepreneurship. Dedicated to creating pathways for female leaders.",
     photo:
@@ -99,44 +72,12 @@ const mentors: Mentor[] = [
     id: "3",
     name: "Emma",
     surname: "Williams",
+    expertise: "Marketing & Digital Strategy",
     description:
       "Marketing strategist with expertise in digital transformation. Committed to helping girls navigate modern careers.",
     photo:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop",
     linkedIn: "https://linkedin.com/in/emmawilliams",
-    instagram: undefined,
-  },
-  {
-    id: "4",
-    name: "Layla",
-    surname: "Hassan",
-    description:
-      "Financial advisor and investment expert. Empowering girls with financial literacy and economic independence.",
-    photo:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&h=500&fit=crop",
-    linkedIn: "https://linkedin.com/in/laylahasssan",
-    instagram: "https://instagram.com/layla.finance",
-  },
-  {
-    id: "5",
-    name: "Jessica",
-    surname: "Chen",
-    description:
-      "UX designer and product manager. Mentoring girls in design thinking and user-centered innovation.",
-    photo:
-      "https://images.unsplash.com/photo-1517849845537-1d51a20414de?w=500&h=500&fit=crop",
-    linkedIn: "https://linkedin.com/in/jessicachen",
-    instagram: "https://instagram.com/jessicadesigns",
-  },
-  {
-    id: "6",
-    name: "Nadia",
-    surname: "Ahmed",
-    description:
-      "Healthcare professional and wellness advocate. Supporting girls' mental health and career development in medicine.",
-    photo:
-      "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=500&h=500&fit=crop",
-    linkedIn: "https://linkedin.com/in/nadiaahmed",
     instagram: undefined,
   },
 ];
@@ -145,31 +86,46 @@ export default function WelcomePage() {
   return (
     <>
       <Navigation />
-      <main className="pt-32">
-        <section className="relative overflow-hidden">
+      <main className="pt-24">
+        <ScrollSection>
           <div className="absolute inset-0 bg-gradient-to-br from-coral-light via-transparent to-gold-light opacity-50" />
           <div className="container-wide section-padding relative">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-up">
-                Empowering Young Women to{" "}
-                <span className="text-gradient text-primary">
-                  Shape Tomorrow
-                </span>
+              <h1 className="font-serif text-primary text-5xl sm:text-5xl md:text-6xl font-bold  mb-2 animate-fade-up">
+                Future Careers
               </h1>
+              <p className="font-serif text-primary text-xl md:text-2xl font-semibold mb-6 animate-fade-up stagger-1">
+                For Better Future
+              </p>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up stagger-1">
-                Future Careers is a mentorship and education initiative
-                dedicated to unlocking the potential of young women through
-                guidance, learning, and real opportunities.
+                Guiding school and university students toward confident academic
+                and career decisions through mentorship and structured career
+                pathways.
+              </p>
+              <p className="text-base md:text-lg text-foreground mb-8 animate-fade-up stagger-1">
+                <span className="font-semibold">
+                  <Sparkles className="inline-block h-5 w-5 text-primary m-2" />
+                  Everything is completely free.
+                </span>
+                <span className="block mt-2">
+                  All you need to do is reserve your seat and start your
+                  journey.
+                </span>
               </p>
               <div className="flex flex-col gap-4 justify-center items-center animate-fade-up stagger-2">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button variant="hero" size="xl" asChild>
-                    <Link href="#about">
-                      Learn More <ArrowRight className="ml-2 h-5 w-5" />
+                    <Link href="/reserve-meeting">
+                      Reserve Your Meeting{" "}
+                      <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
+
                   <Button variant="hero-outline" size="xl" asChild>
-                    <Link href="#team">Meet Our Team</Link>
+                    <Link href="#about">
+                      Explore More
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
                   </Button>
                 </div>
                 <div className="flex gap-4 justify-center items-center">
@@ -199,128 +155,194 @@ export default function WelcomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </ScrollSection>
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-background px-4">
+        <ScrollSection>
           <div className="max-w-4xl mx-auto text-center space-y-8">
             {/* Core Focus Points */}
-            <div className="grid md:grid-cols-3 gap-6 py-12">
-              <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
-                <div className="text-3xl font-bold text-primary">01</div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Mentorship
-                </h3>
-                <p className="text-foreground/70">
-                  Connecting girls with experienced mentors who guide their
-                  personal and professional growth.
-                </p>
-              </div>
+            <ScrollSection>
+              <div className="grid md:grid-cols-3 gap-6 py-12">
+                <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
+                  <div className="text-3xl font-bold text-primary">01</div>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Mentorship
+                  </h3>
+                  <p className="text-foreground/70">
+                    Connecting girls with experienced mentors who guide their
+                    personal and professional growth.
+                  </p>
+                </div>
 
-              <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
-                <div className="text-3xl font-bold text-primary">02</div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Education
-                </h3>
-                <p className="text-foreground/70">
-                  Providing access to quality learning resources and skill
-                  development programs.
-                </p>
-              </div>
+                <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
+                  <div className="text-3xl font-bold text-primary">02</div>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Education
+                  </h3>
+                  <p className="text-foreground/70">
+                    Providing access to quality learning resources and skill
+                    development programs.
+                  </p>
+                </div>
 
-              <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
-                <div className="text-3xl font-bold text-primary">03</div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  Opportunity
-                </h3>
-                <p className="text-foreground/70">
-                  Creating pathways to careers and leadership roles that empower
-                  future generations.
-                </p>
+                <div className="space-y-3 p-6 rounded-lg bg-card border border-border hover:border-primary transition-colors">
+                  <div className="text-3xl font-bold text-primary">03</div>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    Opportunity
+                  </h3>
+                  <p className="text-foreground/70">
+                    Creating pathways to careers and leadership roles that
+                    empower future generations.
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollSection>
 
             {/* Latest Update Preview */}
-            <div className="bg-card border border-border rounded-lg p-8 my-12">
-              <p className="text-sm text-primary font-semibold uppercase tracking-wide">
-                Latest Update
-              </p>
-              <h2 className="text-2xl font-bold text-foreground mt-2 mb-4">
-                Expanding Our Reach
-              </h2>
-              <p className="text-foreground/70 mb-6">
-                We are thrilled to announce new partnerships and expanded
-                programs launching this year to serve more girls in underserved
-                communities.
-              </p>
-              <Link href="/updates">
-                <Button variant="default">View All Updates</Button>
-              </Link>
-            </div>
+            <ScrollSection>
+              <div className="bg-card border border-border rounded-lg p-8 my-12 animate-fade-up">
+                <p className="text-sm text-primary font-semibold uppercase tracking-wide">
+                  Latest Update
+                </p>
+                <h2 className="text-2xl font-bold text-foreground mt-2 mb-4">
+                  Expanding Our Reach
+                </h2>
+                <p className="text-foreground/70 mb-6">
+                  We are thrilled to announce new partnerships and expanded
+                  programs launching this year to serve more girls in
+                  underserved communities.
+                </p>
+                <Link href="/updates">
+                  <Button variant="default">View All Updates</Button>
+                </Link>
+              </div>
+            </ScrollSection>
           </div>
-        </section>
+        </ScrollSection>
 
         {/* About Section */}
-        <section className="py-24 px-4 bg-background" id="about">
-          <div className="max-w-4xl mx-auto">
-            {/* Header */}
+        <div className="max-w-4xl mx-auto">
+          {/* Header */}
+          <ScrollSection>
             <div className="mb-16">
               <h1 className="text-5xl font-bold mb-8 text-primary">
                 About Future Careers
               </h1>
               <p className="text-xl text-foreground/80 text-pretty leading-relaxed">
-                Future Careers is rooted in the vision of providing equitable
-                access to education and mentorship. We believe every girl
-                deserves the opportunity to develop her potential and shape her
-                own future.
+                Future Careers is a career pathway and mentoring platform
+                designed for school and university students who are preparing
+                for academic and professional life.
               </p>
             </div>
+          </ScrollSection>
 
-            {/* About the Project */}
+          {/* About the Project */}
+          <ScrollSection>
             <div className="mb-16 space-y-6">
-              <h2 className="text-3xl font-bold text-primary">Our Project</h2>
+              <h2 className="text-3xl font-bold text-primary">Our Purpose</h2>
               <div className="space-y-4 text-foreground/80 leading-relaxed">
                 <p>
-                  Founded with a commitment to social inclusion, Future Careers
-                  brings together educators, mentors, and community leaders to
-                  create a supportive ecosystem where girls can thrive
-                  academically, personally, and professionally.
+                  We help students discover their strengths, explore career
+                  options, and make informed decisions about their education and
+                  future professions.
                 </p>
                 <p>
-                  Our programs are designed to address educational disparities
-                  while building confidence, critical thinking, and leadership
-                  skills that prepare girls for meaningful contributions to
-                  society.
+                  Future Careers was created to bridge the gap between education
+                  and real world career planning. Many students struggle with
+                  choosing the right academic path, understanding professional
+                  industries, and identifying their strengths.
+                </p>
+                <p>
+                  Our platform connects students with experienced mentors and
+                  provides structured guidance to support confident academic and
+                  career decisions.
                 </p>
               </div>
             </div>
+          </ScrollSection>
 
-            {/* Mission */}
-            <div className="flex gap-x-10">
-              <div className="mb-16 space-y-6 bg-card border border-border rounded-lg p-8">
-                <h2 className="text-3xl font-bold text-foreground text-primary">
+          {/* Access & Support */}
+          <ScrollSection>
+            <div className="mb-16 space-y-6 bg-card border border-border rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-foreground">
+                Free & Supported
+              </h2>
+              <div className="space-y-4 text-foreground/80 leading-relaxed">
+                <p>
+                  <span className="font-semibold text-primary">
+                    All of our sessions, mentorship, and activities are
+                    completely free of charge.
+                  </span>
+                </p>
+                <p>
+                  We are supported by dedicated partners who believe in youth
+                  development and education. Our partners contribute their time,
+                  expertise, and support without any fee or financial
+                  expectation.
+                </p>
+              </div>
+            </div>
+          </ScrollSection>
+
+          {/* Legacy & Mission */}
+          <ScrollSection>
+            <div className="mb-16 space-y-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-8 border border-primary/20">
+              <h2 className="text-2xl font-bold text-foreground">
+                The Taghiyev Legacy
+              </h2>
+              <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
+                Future Careers is proudly developed within the framework of HZT
+                Awards 2026 and is dedicated to the legacy of Haji Zeynalabdin
+                Taghiyev, a visionary philanthropist who believed in the power
+                of education and youth empowerment.
+              </p>
+              <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
+                Inspired by his commitment to future generations, we continue
+                that mission by guiding students toward clarity, opportunity,
+                and long term success.
+              </p>
+            </div>
+          </ScrollSection>
+
+          {/* Mission & Vision */}
+          <ScrollSection>
+            <div className="flex gap-x-10 flex-col lg:flex-row">
+              <div className="flex-1 mb-16 space-y-6 bg-card border border-border rounded-lg p-8">
+                <h2 className="text-2xl font-bold text-foreground text-primary">
                   Our Mission
                 </h2>
                 <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
-                  To empower girls through quality mentorship, education, and
-                  opportunity, creating a generation of confident, capable
-                  leaders who drive positive change in their communities.
+                  To empower school and university students with clarity,
+                  confidence, and structured mentorship so they can make
+                  informed academic and career decisions aligned with their
+                  abilities and future goals.
+                </p>
+                <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
+                  And to make this guidance accessible to everyone, completely
+                  free.
                 </p>
               </div>
 
               {/* Vision */}
-              <div className="mb-16 space-y-6 bg-card border border-border rounded-lg p-8">
-                <h2 className="text-3xl font-bold text-foreground text-primary">
+              <div className="flex-1 mb-16 space-y-6 bg-card border border-border rounded-lg p-8">
+                <h2 className="text-2xl font-bold text-foreground text-primary">
                   Our Vision
                 </h2>
                 <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
-                  A world where every girl has access to mentorship, quality
-                  education, and pathways to success, regardless of her
-                  background or circumstances.
+                  To become a leading youth career development platform that
+                  transforms how students approach academic planning and career
+                  exploration through mentorship, digital tools, and real world
+                  insight.
+                </p>
+                <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
+                  We believe education guidance should be simple, accessible,
+                  and supportive for every student.
                 </p>
               </div>
             </div>
+          </ScrollSection>
 
-            {/* Core Values */}
+          {/* Core Values */}
+          <ScrollSection>
             <div className="mb-16 space-y-6">
               <h2 className="text-3xl font-bold text-primary">Core Values</h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -362,8 +384,10 @@ export default function WelcomePage() {
                 </div>
               </div>
             </div>
+          </ScrollSection>
 
-            {/* Inspiration Note */}
+          {/* Inspiration Note */}
+          <ScrollSection>
             <div className="space-y-6 text-center bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-8 border border-primary/20">
               <h2 className="text-2xl font-bold text-foreground">
                 The Taghiyev Legacy
@@ -376,19 +400,19 @@ export default function WelcomePage() {
                 means investing in entire communities.
               </p>
             </div>
-          </div>
-        </section>
+          </ScrollSection>
+        </div>
 
         {/* Team Section */}
-        <section className="py-24 px-4 bg-background" id="team">
+        <ScrollSection className="pt-24">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="mb-16">
               <h1 className="text-5xl font-bold text-primary mb-6">Our Team</h1>
               <p className="text-xl text-foreground/80 max-w-3xl text-pretty leading-relaxed">
-                We are a dedicated group of educators, mentors, and advocates
-                committed to empowering girls through quality mentorship and
-                education. Here are the people who make Future Careers possible.
+                Behind Future Careers is a passionate team committed to building
+                opportunities for students and shaping pathways for a better
+                future.
               </p>
             </div>
 
@@ -414,10 +438,10 @@ export default function WelcomePage() {
               </p>
             </div>
           </div>
-        </section>
+        </ScrollSection>
 
         {/* Mentors Section */}
-        <section className="py-24 px-4 bg-background" id="mentors">
+        <ScrollSection className="pt-24">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="mb-16">
@@ -425,10 +449,10 @@ export default function WelcomePage() {
                 Our Mentors
               </h1>
               <p className="text-xl text-foreground/80 max-w-3xl text-pretty leading-relaxed">
-                Our mentors are accomplished professionals from diverse fields
-                who are passionate about guiding and supporting the next
-                generation of women leaders. Each brings unique expertise,
-                experience, and dedication to helping girls achieve their goals.
+                Our mentors are experienced professionals and academic advisors
+                who guide students through career exploration, academic
+                planning, and personal development. They volunteer their
+                knowledge and experience to support students without any fee.
               </p>
             </div>
 
@@ -439,7 +463,37 @@ export default function WelcomePage() {
               ))}
             </div>
           </div>
-        </section>
+        </ScrollSection>
+
+        {/* Reserve Meeting Section */}
+        <ScrollSection className="py-24">
+          <div className="mx-auto">
+            <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-8 border border-primary/20 text-center space-y-4 animate-fade-up">
+              <div className="space-y-2">
+                <h2 className="text-4xl font-bold text-primary">
+                  Reserve Meeting
+                </h2>
+                <p className="text-md text-foreground/80">
+                  Booking your session is easy:
+                </p>
+                <div className="text-md text-foreground/80">
+                  1. Choose a mentor. 2. Select a time. 3. Reserve your seat.
+                </div>
+              </div>
+
+              <p className="text-foreground text-lg leading-relaxed">
+                <span className="font-semibold">
+                  No fees. No complicated forms.
+                </span>{" "}
+                Just a simple reservation and your journey begins.
+              </p>
+
+              <Button size="xl" asChild>
+                <Link href="/reserve-meeting">Book Now</Link>
+              </Button>
+            </div>
+          </div>
+        </ScrollSection>
       </main>
     </>
   );

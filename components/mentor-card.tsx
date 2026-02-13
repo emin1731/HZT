@@ -2,6 +2,7 @@ import { Mentor } from "@/lib/types";
 import { Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 interface MentorCardProps {
   mentor: Mentor;
@@ -28,38 +29,48 @@ export function MentorCard({ mentor }: MentorCardProps) {
           <h3 className="font-semibold text-foreground text-lg">
             {mentor.name} {mentor.surname}
           </h3>
+          {mentor.expertise && (
+            <p className="text-sm text-primary font-medium mt-1">
+              {mentor.expertise}
+            </p>
+          )}
         </div>
 
         <p className="text-foreground/70 text-sm leading-relaxed flex-grow">
           {mentor.description}
         </p>
 
-        {(mentor.linkedIn || mentor.instagram) && (
-          <div className="flex gap-3 pt-4 border-t border-border">
-            {mentor.linkedIn && (
-              <Link
-                href={mentor.linkedIn}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            )}
-            {mentor.instagram && (
-              <Link
-                href={mentor.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
-            )}
-          </div>
-        )}
+        <div className="space-y-3 pt-2 animate-fade-up">
+          {(mentor.linkedIn || mentor.instagram) && (
+            <div className="flex gap-3">
+              {mentor.linkedIn && (
+                <Link
+                  href={mentor.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+              )}
+              {mentor.instagram && (
+                <Link
+                  href={mentor.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Link>
+              )}
+            </div>
+          )}
+          <Button size="sm" className="w-full" asChild>
+            <Link href="/reserve-meeting">Reserve Session</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

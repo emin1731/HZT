@@ -10,7 +10,10 @@ export function Navigation() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Main" },
+    { href: "/", label: "Home" },
+    { href: "/#about", label: "About" },
+    { href: "/#team", label: "Team" },
+    { href: "/#mentors", label: "Mentors" },
     { href: "/news", label: "News" },
     { href: "/articles", label: "Articles" },
   ];
@@ -48,11 +51,14 @@ export function Navigation() {
             </ul>
 
             <div className="hidden md:flex items-center gap-3">
-              <Button variant="outline" size="sm" asChild>
+              {/* <Button variant="outline" size="sm" asChild>
                 <Link href="/login">Login</Link>
-              </Button>
+              </Button> */}
               <Button variant="default" size="sm" asChild>
-                <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfIEbQ0KWf52hWZO_EiquQJ-jJ9_DCv_qtu2Py1uXelpvlV_g/viewform">
+                <Link
+                  target="blank"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdnQH8aIQbrU3t2HaVln-cPq-F4cd1r3MgLYoJ2-dANDOfGMw/viewform"
+                >
                   Reserve Career Meeting
                 </Link>
               </Button>

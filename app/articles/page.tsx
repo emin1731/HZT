@@ -1,13 +1,14 @@
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { getAllArticles } from "@/lib/posts";
+import { ScrollSection } from "@/components/scroll-section";
 
 export default function ArticlesPage() {
   const articles = getAllArticles();
   return (
     <div className="">
       {/* Header */}
-      <section className="mb-16">
+      <ScrollSection className="mb-16">
         <h1 className="text-5xl font-bold text-foreground mb-6">
           Insights & Articles
         </h1>
@@ -16,11 +17,11 @@ export default function ArticlesPage() {
           and personal development. Our team shares insights and reflections
           from the work we do.
         </p>
-      </section>
+      </ScrollSection>
 
       {/* Featured Article */}
       {articles.length > 0 && (
-        <section className="mb-12 bg-linear-to-br from-primary/5 to-secondary/5 border border-border rounded-xl p-8 md:p-10 hover:shadow-lg transition-shadow">
+        <ScrollSection className="mb-12 bg-linear-to-br from-primary/5 to-secondary/5 border border-border rounded-xl p-8 md:p-10 hover:shadow-lg transition-shadow">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <Badge variant="default" className="text-xs font-semibold">
               Featured
@@ -74,11 +75,11 @@ export default function ArticlesPage() {
               </span>
             </div>
           </Link>
-        </section>
+        </ScrollSection>
       )}
 
       {/* Articles Grid */}
-      <section className="space-y-6 mb-16">
+      <ScrollSection className="space-y-6 mb-16">
         <h2 className="text-2xl font-bold text-foreground mb-6">
           Latest Articles
         </h2>
@@ -152,10 +153,10 @@ export default function ArticlesPage() {
             );
           })}
         </div>
-      </section>
+      </ScrollSection>
 
       {/* Social Media */}
-      <section className="mt-16 bg-card border border-border rounded-lg p-8 text-center space-y-6">
+      <ScrollSection className="mt-16 from-primary/10 to-secondary/10 rounded-lg p-8 border border-primary/20 text-center space-y-6">
         <h2 className="text-2xl font-bold text-foreground">Follow Us</h2>
         <p className="text-foreground/80 max-w-2xl mx-auto">
           Stay connected with us on social media for the latest updates and
@@ -231,7 +232,7 @@ export default function ArticlesPage() {
             </span>
           </a>
         </div>
-      </section>
+      </ScrollSection>
     </div>
   );
 }

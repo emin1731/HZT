@@ -73,6 +73,7 @@ export interface Mentor {
   id: string;
   name: string;
   surname: string;
+  expertise?: string;
   description: string;
   photo?: string;
   linkedIn?: string;
