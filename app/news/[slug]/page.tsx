@@ -72,7 +72,7 @@ export default function PostPage() {
 
   if (loading) {
     return (
-      <div className="container max-w-4xl mx-auto px-4 py-12">
+      <div className="container max-w-4xl mx-auto px-4 py-12 ">
         <div className="animate-pulse">
           <div className="h-4 bg-muted rounded w-20 mb-8"></div>
           <div className="h-10 bg-muted rounded w-3/4 mb-4"></div>
@@ -122,7 +122,7 @@ export default function PostPage() {
   };
 
   return (
-    <div className="container max-w-4xl mx-auto px-4 py-12">
+    <div className="container pt-32 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Back Navigation */}
       <Link
         href="/news"

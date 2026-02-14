@@ -5,6 +5,11 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { ScrollSection } from "@/components/scroll-section";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Instagram, Linkedin, Sparkles } from "lucide-react";
+import { TypingAnimation } from "@/components/typing-animation";
+import Link from "next/link";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -43,7 +48,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         <>
           <Navigation />
-          <main className="pt-24 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <main className="">
             {children}
             <Analytics />
           </main>

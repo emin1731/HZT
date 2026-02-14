@@ -107,10 +107,10 @@ export default function ArticlePage() {
     );
   }
 
-  const hasHeading = /<h1[\s>]/i.test(article.html);
+  // const hasHeading = /<h1[\s>]/i.test(article.html);
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="pt-32 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Back Button */}
       <Link
         href="/articles"
@@ -136,7 +136,7 @@ export default function ArticlePage() {
         )}
 
         {/* Title */}
-        {!hasHeading && article.metadata.title && (
+        {article.metadata.title && (
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
             {article.metadata.title}
           </h1>

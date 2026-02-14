@@ -6,11 +6,11 @@ import { ScrollSection } from "@/components/scroll-section";
 export default function ArticlesPage() {
   const articles = getAllArticles();
   return (
-    <div className="">
+    <div className="pt-24 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Header */}
-      <ScrollSection className="mb-16">
+      <ScrollSection className="my-16">
         <h1 className="text-5xl font-bold text-foreground mb-6">
-          Insights & Articles
+          Articles & Insights
         </h1>
         <p className="text-xl text-foreground/80 text-pretty leading-relaxed">
           Thought leadership on girls' education, mentorship, social inclusion,
@@ -19,140 +19,75 @@ export default function ArticlesPage() {
         </p>
       </ScrollSection>
 
-      {/* Featured Article */}
-      {articles.length > 0 && (
-        <ScrollSection className="mb-12 bg-linear-to-br from-primary/5 to-secondary/5 border border-border rounded-xl p-8 md:p-10 hover:shadow-lg transition-shadow">
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <Badge variant="default" className="text-xs font-semibold">
-              Featured
-            </Badge>
-            {articles[0].metadata.date && (
-              <span className="text-sm text-foreground/60">
-                {articles[0].metadata.date}
-              </span>
-            )}
-            {articles[0].metadata.readTime && (
-              <>
-                <span className="text-foreground/40">•</span>
-                <span className="text-sm text-foreground/60">
-                  {articles[0].metadata.readTime} min read
-                </span>
-              </>
-            )}
-          </div>
+      {/* Articles List */}
+      <ScrollSection className="space-y-6">
+        {articles.map((article) => {
+          const tags = Array.isArray(article.metadata.tags)
+            ? article.metadata.tags
+            : [];
 
-          <Link href={`/articles/${articles[0].slug}`} className="group">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-pretty group-hover:text-primary transition-colors">
-              {articles[0].metadata.title ?? "Untitled"}
-            </h2>
-
-            {articles[0].metadata.description && (
-              <p className="text-lg text-foreground/70 mb-6 text-pretty leading-relaxed">
-                {articles[0].metadata.description}
-              </p>
-            )}
-
-            {articles[0].metadata.tags &&
-              Array.isArray(articles[0].metadata.tags) &&
-              articles[0].metadata.tags.length > 0 && (
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {articles[0].metadata.tags.map((tag, idx) => (
-                    <Badge key={idx} variant="secondary" className="text-xs">
-                      {String(tag)}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-
-            <div className="flex items-center gap-2 pt-4 border-t border-border/50">
-              {articles[0].metadata.author && (
-                <span className="text-sm font-medium text-foreground/80">
-                  By {articles[0].metadata.author}
-                </span>
-              )}
-              <span className="text-primary group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 ml-auto text-sm font-semibold">
-                Read Article <span>→</span>
-              </span>
-            </div>
-          </Link>
-        </ScrollSection>
-      )}
-
-      {/* Articles Grid */}
-      <ScrollSection className="space-y-6 mb-16">
-        <h2 className="text-2xl font-bold text-foreground mb-6">
-          Latest Articles
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.slice(1).map((article) => {
-            const tags = Array.isArray(article.metadata.tags)
-              ? article.metadata.tags
-              : [];
-            return (
-              <Link
-                key={article.slug}
-                href={`/articles/${article.slug}`}
-                className="bg-card border border-border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all group flex flex-col h-full"
-              >
-                <div className="flex flex-col flex-1">
-                  {/* Tags */}
-                  {tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {tags.slice(0, 2).map((tag, idx) => (
-                        <Badge
-                          key={idx}
-                          variant="secondary"
-                          className="text-xs"
-                        >
-                          {String(tag)}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Title */}
-                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+          return (
+            <article
+              key={article.slug}
+              className="bg-card border border-border rounded-lg p-8 hover:border-primary transition-colors space-y-4 group cursor-pointer"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1 space-y-3">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    {tags.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {tags.slice(0, 3).map((tag, idx) => (
+                          <Badge
+                            key={idx}
+                            variant="secondary"
+                            className="text-xs"
+                          >
+                            {String(tag)}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+                    {article.metadata.date && (
+                      <p className="text-sm text-foreground/60">
+                        {article.metadata.date}
+                      </p>
+                    )}
+                    {article.metadata.readTime && (
+                      <>
+                        <span className="text-foreground/40">•</span>
+                        <span className="text-sm text-foreground/60">
+                          {article.metadata.readTime} min read
+                        </span>
+                      </>
+                    )}
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {article.metadata.title ?? "Untitled"}
-                  </h3>
-
-                  {/* Description */}
+                  </h2>
                   {article.metadata.description && (
-                    <p className="text-sm text-foreground/70 mb-4 leading-relaxed line-clamp-3 flex-1">
+                    <p className="text-foreground/80 leading-relaxed">
                       {article.metadata.description}
                     </p>
                   )}
+                  {article.metadata.author && (
+                    <p className="text-sm text-foreground/60">
+                      By {article.metadata.author}
+                    </p>
+                  )}
                 </div>
-
-                {/* Footer */}
-                <div className="pt-4 mt-auto border-t border-border/50">
-                  <div className="flex items-center justify-between text-xs text-foreground/60">
-                    <div className="flex flex-col gap-1">
-                      {article.metadata.author && (
-                        <span className="font-medium text-foreground/80">
-                          {article.metadata.author}
-                        </span>
-                      )}
-                      <div className="flex items-center gap-2">
-                        {article.metadata.date && (
-                          <span>{article.metadata.date}</span>
-                        )}
-                        {article.metadata.readTime && (
-                          <>
-                            <span>•</span>
-                            <span>{article.metadata.readTime} min read</span>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                    <span className="text-primary text-base group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+              </div>
+              <div className="pt-4 border-t border-border">
+                <Link
+                  href={`/articles/${article.slug}`}
+                  className="text-primary font-semibold hover:gap-2 transition-all flex items-center gap-1"
+                >
+                  Read Article
+                  <span>→</span>
+                </Link>
+              </div>
+            </article>
+          );
+        })}
       </ScrollSection>
 
       {/* Social Media */}
@@ -164,24 +99,7 @@ export default function ArticlesPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <a
-            href="https://twitter.com/hztgirls"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-background border border-border rounded-lg hover:border-primary transition-colors group"
-          >
-            <svg
-              className="w-5 h-5 text-foreground group-hover:text-primary transition-colors"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-              Twitter
-            </span>
-          </a>
-          <a
-            href="https://instagram.com/hztgirls"
+            href="https://www.instagram.com/futurecareersproject/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-background border border-border rounded-lg hover:border-primary transition-colors group"
@@ -197,8 +115,8 @@ export default function ArticlesPage() {
               Instagram
             </span>
           </a>
-          <a
-            href="https://facebook.com/hztgirls"
+          {/* <a
+            href="https://facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-background border border-border rounded-lg hover:border-primary transition-colors group"
@@ -213,9 +131,9 @@ export default function ArticlesPage() {
             <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
               Facebook
             </span>
-          </a>
+          </a> */}
           <a
-            href="https://linkedin.com/company/hztgirls"
+            href="https://linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-background border border-border rounded-lg hover:border-primary transition-colors group"
@@ -229,6 +147,23 @@ export default function ArticlesPage() {
             </svg>
             <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
               LinkedIn
+            </span>
+          </a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdnQH8aIQbrU3t2HaVln-cPq-F4cd1r3MgLYoJ2-dANDOfGMw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-background border border-border rounded-lg hover:border-primary transition-colors group"
+          >
+            <svg
+              className="w-5 h-5 text-foreground group-hover:text-primary transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M14.727 6.727H14V5.818c0-.61.495-1.105 1.105-1.105h.621c.61 0 1.105.495 1.105 1.105v.91h-.727a1.378 1.378 0 00-1.377 1.376v8.727c0 .76.617 1.377 1.377 1.377h.727v.91c0 .61-.495 1.104-1.105 1.104h-.621c-.61 0-1.105-.495-1.105-1.105v-.91h.727a1.378 1.378 0 001.377-1.376V8.103a1.378 1.378 0 00-1.377-1.376zM7.895 3.273h8.21C17.77 3.273 19 4.503 19 6.168v11.664c0 1.665-1.23 2.895-2.895 2.895h-8.21c-1.665 0-2.895-1.23-2.895-2.895V6.168c0-1.665 1.23-2.895 2.895-2.895zm-.621 2.216a.828.828 0 00-.828.828v11.366c0 .457.371.828.828.828h8.452a.828.828 0 00.828-.828V6.317a.828.828 0 00-.828-.828H7.274zM9 8.455h6v1.09H9v-1.09zm0 2.454h6v1.091H9v-1.09zm0 2.455h4.364v1.09H9v-1.09z" />
+            </svg>
+            <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+              Join Us
             </span>
           </a>
         </div>

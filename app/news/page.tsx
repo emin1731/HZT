@@ -13,9 +13,9 @@ export default function NewsPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="">
+    <div className="pt-24 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Header */}
-      <ScrollSection className="mb-16">
+      <ScrollSection className="my-16">
         <h1 className="text-5xl font-bold text-foreground mb-6">
           News & Updates
         </h1>
@@ -79,24 +79,7 @@ export default function NewsPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <a
-            href="https://twitter.com/hztgirls"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary transition-colors group"
-          >
-            <svg
-              className="w-5 h-5 text-foreground group-hover:text-primary transition-colors"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-            <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-              Twitter
-            </span>
-          </a>
-          <a
-            href="https://instagram.com/hztgirls"
+            href="https://instagram.com/futurecareersproject"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary transition-colors group"
@@ -113,24 +96,7 @@ export default function NewsPage() {
             </span>
           </a>
           <a
-            href="https://facebook.com/hztgirls"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary transition-colors group"
-          >
-            <svg
-              className="w-5 h-5 text-foreground group-hover:text-primary transition-colors"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-            <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-              Facebook
-            </span>
-          </a>
-          <a
-            href="https://linkedin.com/company/hztgirls"
+            href="https://linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary transition-colors group"
@@ -144,6 +110,23 @@ export default function NewsPage() {
             </svg>
             <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
               LinkedIn
+            </span>
+          </a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdnQH8aIQbrU3t2HaVln-cPq-F4cd1r3MgLYoJ2-dANDOfGMw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-6 py-3 bg-card border border-border rounded-lg hover:border-primary transition-colors group"
+          >
+            <svg
+              className="w-5 h-5 text-foreground group-hover:text-primary transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M14.727 6.727H14V5.818c0-.61.495-1.105 1.105-1.105h.621c.61 0 1.105.495 1.105 1.105v.91h-.727a1.378 1.378 0 00-1.377 1.376v8.727c0 .76.617 1.377 1.377 1.377h.727v.91c0 .61-.495 1.104-1.105 1.104h-.621c-.61 0-1.105-.495-1.105-1.105v-.91h.727a1.378 1.378 0 001.377-1.376V8.103a1.378 1.378 0 00-1.377-1.376zM7.895 3.273h8.21C17.77 3.273 19 4.503 19 6.168v11.664c0 1.665-1.23 2.895-2.895 2.895h-8.21c-1.665 0-2.895-1.23-2.895-2.895V6.168c0-1.665 1.23-2.895 2.895-2.895zm-.621 2.216a.828.828 0 00-.828.828v11.366c0 .457.371.828.828.828h8.452a.828.828 0 00.828-.828V6.317a.828.828 0 00-.828-.828H7.274zM9 8.455h6v1.09H9v-1.09zm0 2.454h6v1.091H9v-1.09zm0 2.455h4.364v1.09H9v-1.09z" />
+            </svg>
+            <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+              Join Us
             </span>
           </a>
         </div>

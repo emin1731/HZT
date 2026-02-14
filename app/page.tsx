@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MentorCard } from "@/components/mentor-card";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { ScrollSection } from "@/components/scroll-section";
+import { TypingAnimation } from "@/components/typing-animation";
 import { ArrowRight, Instagram, Linkedin, Sparkles } from "lucide-react";
 import { Mentor } from "@/lib/types";
 
@@ -23,7 +24,7 @@ const teamMembers: TeamMember[] = [
     role: "Founder & Director",
     bio: "Description of the student",
     initials: "UA",
-    photo: "/Ulvi-Asadli.jpeg",
+    photo: "/ulvi-asadli.jpeg",
   },
   {
     id: "2",
@@ -31,7 +32,7 @@ const teamMembers: TeamMember[] = [
     role: "Program Manager",
     bio: "Description of the student",
     initials: "KG",
-    photo: "/Khuraman-Guliyeva.jpeg",
+    photo: "/khuraman-guliyeva.jpeg",
   },
   {
     id: "3",
@@ -39,75 +40,109 @@ const teamMembers: TeamMember[] = [
     role: "Community Outreach Lead",
     bio: "Description of the student",
     initials: "EH",
-    photo: "/Elshan-huseynzada.jpeg",
+    photo: "/elshan-huseynzada.jpeg",
   },
 ];
 
 const mentors: Mentor[] = [
   {
     id: "1",
-    name: "Sarah",
-    surname: "Johnson",
-    expertise: "Technology & Software Development",
-    description:
-      "Tech entrepreneur with 10+ years in software development. Passionate about mentoring young women in STEM fields.",
-    photo:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop",
-    linkedIn: "https://linkedin.com/in/sarahjohnson",
-    instagram: undefined,
+    name: "Əmrah",
+    surname: "Həsənli",
+    expertise:
+      "Təhsil İşçilərinin Həmrəyliyi Alyansının Sədri, təhsil məsələləri üzrə ekspert",
+    photo: "/emrah-hesenli.jpeg",
   },
   {
     id: "2",
-    name: "Amira",
-    surname: "Al-Dosari",
-    expertise: "Business & Entrepreneurship",
-    description:
-      "Business consultant specializing in startups and women entrepreneurship. Dedicated to creating pathways for female leaders.",
-    photo:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
-    linkedIn: "https://linkedin.com/in/amiraldosari",
-    instagram: "https://instagram.com/amiraldosari",
+    name: "Vüsət",
+    surname: "Əzizov",
+    expertise:
+      "Silsilə Tədris Mərkəzinin rəhbəri, Təhsil işləri üzrə mütəxəssis.",
+    photo: "/vusat-azizov.jpeg",
   },
   {
     id: "3",
-    name: "Emma",
-    surname: "Williams",
-    expertise: "Marketing & Digital Strategy",
-    description:
-      "Marketing strategist with expertise in digital transformation. Committed to helping girls navigate modern careers.",
-    photo:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop",
-    linkedIn: "https://linkedin.com/in/emmawilliams",
-    instagram: undefined,
+    name: "Elnur",
+    surname: "Quliyev",
+    expertise:
+      "Neway Academy-nin təsisçi və direktoru, 10 il təcrübəyə malik ingilis dili mütəxxəsisi",
+    photo: "/elnur-guliyev.jpeg",
+  },
+  {
+    id: "4",
+    name: "Rizvan",
+    surname: "Fikrətoğlu",
+    expertise:
+      "'Master of Science' Təhsil Mərkəzinin direktoru, Təhsil işləri üzrə ekspert",
+    photo: "/rizvan-fikretoglu.jpeg",
+  },
+  {
+    id: "5",
+    name: "Ələmdar",
+    surname: "Manafov",
+    expertise:
+      "Marketing Specialist / Entreprenuer Founder of Be Positive Advertising Agency, Marketing & Brand Specialist of Colibri Express",
+    photo: "/elemdar-manafov.jpeg",
+  },
+  {
+    id: "6",
+    name: "Seyidfatima",
+    surname: "Abbasova",
+    expertise: "Accredited Trainer. M. Sc. Social Psychology",
+    photo: "/seyidfatima-abbasova.jpeg",
+  },
+  {
+    id: "7",
+    name: "Günay",
+    surname: "İbadova",
+    expertise: "Psychtherapist, Trainer",
+    photo: "/gunay-ibadova.jpeg",
   },
 ];
 
 export default function WelcomePage() {
   return (
     <>
-      <Navigation />
-      <main className="pt-24">
-        <ScrollSection>
-          <div className="absolute inset-0 bg-gradient-to-br from-coral-light via-transparent to-gold-light opacity-50" />
-          <div className="container-wide section-padding relative">
+      {/* <Navigation /> */}
+      <header className="pt-24 text-white">
+        <ScrollSection className="relative overflow-hidden min-h-screen w-full h-full -mt-24">
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          {/* Dimming Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-br from-coral-light via-transparent to-gold-light opacity-30" />
+          <div className="relative min-h-screen flex items-center justify-center px-4 py-32">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="font-serif text-primary text-5xl sm:text-5xl md:text-6xl font-bold  mb-2 animate-fade-up">
-                Future Careers
+              <h1 className="font-serif text-primary-foreground text-5xl sm:text-5xl md:text-6xl font-bold mb-2">
+                <TypingAnimation text="Future Careers" speed={60} />
               </h1>
-              <p className="font-serif text-primary text-xl md:text-2xl font-semibold mb-6 animate-fade-up stagger-1">
-                For Better Future
+              <p className="font-serif text-primary-foreground text-xl md:text-2xl font-semibold mb-6 animate-fade-up stagger-1">
+                <TypingAnimation
+                  text="For Better Future"
+                  speed={60}
+                  delay={1400}
+                />
               </p>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-up stagger-1">
+              <p className="text-lg md:text-xl text-primary-foreground mb-8 animate-fade-up stagger-1">
                 Guiding school and university students toward confident academic
                 and career decisions through mentorship and structured career
                 pathways.
               </p>
               <p className="text-base md:text-lg text-foreground mb-8 animate-fade-up stagger-1">
-                <span className="font-semibold">
-                  <Sparkles className="inline-block h-5 w-5 text-primary m-2" />
+                <span className="font-semibold text-primary-foreground">
+                  <Sparkles className="inline-block h-5 w-5 m-2" />
                   Everything is completely free.
                 </span>
-                <span className="block mt-2">
+                <span className="block mt-2 text-primary-foreground">
                   All you need to do is reserve your seat and start your
                   journey.
                 </span>
@@ -115,13 +150,16 @@ export default function WelcomePage() {
               <div className="flex flex-col gap-4 justify-center items-center animate-fade-up stagger-2">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Button variant="hero" size="xl" asChild>
-                    <Link href="/reserve-meeting">
+                    <Link
+                      target="blank"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdnQH8aIQbrU3t2HaVln-cPq-F4cd1r3MgLYoJ2-dANDOfGMw/viewform"
+                    >
                       Reserve Your Meeting{" "}
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                   </Button>
 
-                  <Button variant="hero-outline" size="xl" asChild>
+                  <Button variant="hero" size="xl" asChild>
                     <Link href="#about">
                       Explore More
                       <ArrowRight className="ml-2 h-5 w-5" />
@@ -129,18 +167,18 @@ export default function WelcomePage() {
                   </Button>
                 </div>
                 <div className="flex gap-4 justify-center items-center">
-                  <Button variant="hero-outline" size="lg" asChild>
+                  <Button variant="hero" size="lg" asChild>
                     <Link
-                      href="https://www.instagram.com/taghiyevsgirls/"
+                      href="https://www.instagram.com/futurecareersproject/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-primary hover:text-primary/80"
+                      className="flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80"
                     >
                       <Instagram className="size-12" />
                       <span className="text-base font-medium">Follow Us</span>
                     </Link>
                   </Button>
-                  <Button variant="hero-outline" size="lg" asChild>
+                  <Button variant="hero" size="lg" asChild>
                     <Link
                       href="https://linkedin.com"
                       target="_blank"
@@ -156,6 +194,8 @@ export default function WelcomePage() {
             </div>
           </div>
         </ScrollSection>
+      </header>
+      <main className="pt-24 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <ScrollSection>
           <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -211,7 +251,7 @@ export default function WelcomePage() {
                   programs launching this year to serve more girls in
                   underserved communities.
                 </p>
-                <Link href="/updates">
+                <Link href="/news">
                   <Button variant="default">View All Updates</Button>
                 </Link>
               </div>
@@ -222,7 +262,7 @@ export default function WelcomePage() {
         {/* About Section */}
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <ScrollSection>
+          <ScrollSection id="about">
             <div className="mb-16">
               <h1 className="text-5xl font-bold mb-8 text-primary">
                 About Future Careers
@@ -404,7 +444,7 @@ export default function WelcomePage() {
         </div>
 
         {/* Team Section */}
-        <ScrollSection className="pt-24">
+        <ScrollSection className="pt-24" id="team">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="mb-16">
@@ -441,7 +481,7 @@ export default function WelcomePage() {
         </ScrollSection>
 
         {/* Mentors Section */}
-        <ScrollSection className="pt-24">
+        <ScrollSection className="pt-24" id="mentors">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="mb-16">
@@ -489,7 +529,12 @@ export default function WelcomePage() {
               </p>
 
               <Button size="xl" asChild>
-                <Link href="/reserve-meeting">Book Now</Link>
+                <Link
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdnQH8aIQbrU3t2HaVln-cPq-F4cd1r3MgLYoJ2-dANDOfGMw/viewform"
+                  target="_blank"
+                >
+                  Book Now
+                </Link>
               </Button>
             </div>
           </div>
