@@ -15,12 +15,14 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
     <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors h-full flex flex-col">
       {/* Photo */}
       {member.photo && (
-        <div className="relative w-full h-48 bg-muted overflow-hidden">
+        <div className="w-full bg-muted">
           <Image
             src={member.photo}
             alt={member.name}
-            fill
-            className="object-cover"
+            width={800}
+            height={600}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="w-full h-auto object-contain"
           />
         </div>
       )}

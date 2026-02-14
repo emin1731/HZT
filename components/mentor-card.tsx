@@ -13,12 +13,14 @@ export function MentorCard({ mentor }: MentorCardProps) {
     <div className="bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors space-y-0 h-full flex flex-col">
       {/* Photo */}
       {mentor.photo && (
-        <div className="relative w-full h-48 bg-muted overflow-hidden">
+        <div className="w-full bg-muted">
           <Image
             src={mentor.photo}
             alt={`${mentor.name} ${mentor.surname}`}
-            fill
-            className="object-cover"
+            width={800}
+            height={600}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="w-full h-auto object-contain"
           />
         </div>
       )}
@@ -35,10 +37,6 @@ export function MentorCard({ mentor }: MentorCardProps) {
             </p>
           )}
         </div>
-
-        <p className="text-foreground/70 text-sm leading-relaxed flex-grow">
-          {mentor.description}
-        </p>
 
         <div className="space-y-3 pt-2 animate-fade-up">
           {(mentor.linkedIn || mentor.instagram) && (

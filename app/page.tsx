@@ -5,7 +5,7 @@ import { MentorCard } from "@/components/mentor-card";
 import { TeamMemberCard } from "@/components/team-member-card";
 import { ScrollSection } from "@/components/scroll-section";
 import { TypingAnimation } from "@/components/typing-animation";
-import { ArrowRight, Instagram, Linkedin, Sparkles } from "lucide-react";
+import { ArrowRight, Instagram, Sparkles } from "lucide-react";
 import { Mentor } from "@/lib/types";
 
 interface TeamMember {
@@ -19,9 +19,17 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
+    id: "3",
+    name: "Elshan Huseynzada",
+    role: "Founder & Director",
+    bio: "Description of the student",
+    initials: "EH",
+    photo: "/elshan-huseynzada.jpeg",
+  },
+  {
     id: "1",
     name: "Ulvi Asadli",
-    role: "Founder & Director",
+    role: "Community Outreach Lead",
     bio: "Description of the student",
     initials: "UA",
     photo: "/ulvi-asadli.jpeg",
@@ -29,18 +37,10 @@ const teamMembers: TeamMember[] = [
   {
     id: "2",
     name: "Khuraman Guliyeva",
-    role: "Program Manager",
+    role: "Program Manager & Operations Lead",
     bio: "Description of the student",
     initials: "KG",
     photo: "/khuraman-guliyeva.jpeg",
-  },
-  {
-    id: "3",
-    name: "Elshan Huseynzada",
-    role: "Community Outreach Lead",
-    bio: "Description of the student",
-    initials: "EH",
-    photo: "/elshan-huseynzada.jpeg",
   },
 ];
 
@@ -99,6 +99,38 @@ const mentors: Mentor[] = [
     expertise: "Psychtherapist, Trainer",
     photo: "/gunay-ibadova.jpeg",
   },
+  {
+    id: "8",
+    name: "Şahin",
+    surname: "Sərdarlı",
+    expertise:
+      "Karyera və İşə Hazırlıq Mərkəzinin təsisçisi, karyera məsləhətçisi",
+    photo: "/sahin-serdarli.jpeg",
+  },
+  {
+    id: "9",
+    name: "Ləman",
+    surname: "Abbasova",
+    expertise:
+      "Sosial Media Marketinq üzrə mütəxəssis, mobilograf və Namel Academy təhsil platformasının qurucusu.",
+    photo: "/laman-abbasova.jpeg",
+  },
+  {
+    id: "10",
+    name: "Rəşad",
+    surname: "İmanov",
+    expertise:
+      "Strateji Kommunikasiya üzrə Mütəxəssis.Strateji Kommunikasiya üzrə Mütəxəssis.",
+    photo: "/rasad-imanov.jpeg",
+  },
+  {
+    id: "11",
+    name: "Nərmin",
+    surname: "Nizam",
+    expertise:
+      "Amerika Akkreditasiya Assosiasiyası tərəfindən sertifikatlaşdırılmış təlimçi və “Böyük Dayaq” İctimai Birliyinin təsisçisi",
+    photo: "/narmin-nizam.jpeg",
+  },
 ];
 
 export default function WelcomePage() {
@@ -113,7 +145,7 @@ export default function WelcomePage() {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full object-cover"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
@@ -180,13 +212,18 @@ export default function WelcomePage() {
                   </Button>
                   <Button variant="hero" size="lg" asChild>
                     <Link
-                      href="https://linkedin.com"
+                      href="https://chat.whatsapp.com/DjF8xA4ieaS5k7wfrnp5eb"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-primary hover:text-primary/80"
+                      className="group flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80"
                     >
-                      <Linkedin className="size-12" />
-                      <span className="text-base font-medium">Connect</span>
+                      <span
+                        aria-hidden="true"
+                        className="size-6 bg-current [mask-image:url('/icons/whatsapp-icon.svg')] [mask-size:contain] [mask-repeat:no-repeat] [mask-position:center]"
+                      />
+                      <span className="text-base font-medium">
+                        Join the group
+                      </span>
                     </Link>
                   </Button>
                 </div>
@@ -208,8 +245,8 @@ export default function WelcomePage() {
                     Mentorship
                   </h3>
                   <p className="text-foreground/70">
-                    Connecting girls with experienced mentors who guide their
-                    personal and professional growth.
+                    Connecting people with experienced mentors who guide their
+                    professional and career growth.
                   </p>
                 </div>
 

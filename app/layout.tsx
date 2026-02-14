@@ -5,11 +5,6 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { ScrollSection } from "@/components/scroll-section";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Instagram, Linkedin, Sparkles } from "lucide-react";
-import { TypingAnimation } from "@/components/typing-animation";
-import Link from "next/link";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });

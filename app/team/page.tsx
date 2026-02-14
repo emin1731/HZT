@@ -28,7 +28,7 @@ const teamMembers: TeamMember[] = [
     id: "3",
     name: "Fatima Hassan",
     role: "Community Outreach Lead",
-    bio: "Passionate about building partnerships and connecting girls with resources and opportunities.",
+    bio: "Passionate about building partnerships and connecting students with resources and opportunities.",
     initials: "FH",
   },
   {

@@ -87,14 +87,6 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Get in Touch</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="mailto:info@hztgirls.org"
-                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
-                >
-                  info@hztgirls.org
-                </a>
-              </li>
               <li className="text-sm text-foreground/70">
                 Dedicated to social inclusion and opportunity
               </li>
