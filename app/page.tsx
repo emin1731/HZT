@@ -285,7 +285,7 @@ export default function WelcomePage() {
                 </h2>
                 <p className="text-foreground/70 mb-6">
                   We are thrilled to announce new partnerships and expanded
-                  programs launching this year to serve more girls in
+                  programs launching this year to serve more students in
                   underserved communities.
                 </p>
                 <Link href="/news">
@@ -428,8 +428,8 @@ export default function WelcomePage() {
                     Inclusion
                   </h3>
                   <p className="text-foreground/70">
-                    We believe every girl deserves equal opportunity and a voice
-                    in her community.
+                    We believe every student deserves equal opportunity and a
+                    voice in their community.
                   </p>
                 </div>
                 <div className="space-y-3 p-6 bg-card border border-border rounded-lg">
@@ -447,7 +447,7 @@ export default function WelcomePage() {
                   </h3>
                   <p className="text-foreground/70">
                     We focus on building confidence, skills, and agency in every
-                    girl we serve.
+                    students we serve.
                   </p>
                 </div>
                 <div className="space-y-3 p-6 bg-card border border-border rounded-lg">
@@ -473,8 +473,8 @@ export default function WelcomePage() {
                 Inspired by the pioneering work of social reformers who believed
                 in the transformative power of education, Future Careers carries
                 forward the legacy of social inclusion and human development. We
-                honor the vision of those who understood that investing in girls
-                means investing in entire communities.
+                honor the vision of those who understood that investing in
+                students means investing in entire communities.
               </p>
             </div>
           </ScrollSection>
@@ -508,8 +508,8 @@ export default function WelcomePage() {
               <p className="text-lg text-foreground/80 text-pretty leading-relaxed">
                 Every member of our team is driven by the belief that education
                 and mentorship can transform lives. We work collaboratively to
-                create safe, inclusive spaces where girls can learn, grow, and
-                discover their potential. Our diversity of backgrounds and
+                create safe, inclusive spaces where students can learn, grow,
+                and discover their potential. Our diversity of backgrounds and
                 expertise allows us to serve our students with depth, empathy,
                 and professionalism.
               </p>

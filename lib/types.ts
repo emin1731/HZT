@@ -146,7 +146,7 @@ export interface ArticlesPage {
 }
 
 // Full Site Data
-export interface HZTGirlsWebsite {
+export interface HZTFutureCareersWebsite {
   siteName: string;
   siteDescription: string;
   welcome: WelcomePage;
