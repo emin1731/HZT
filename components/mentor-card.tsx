@@ -66,7 +66,9 @@ export function MentorCard({ mentor }: MentorCardProps) {
             </div>
           )}
           <Button size="sm" className="w-full" asChild>
-            <Link href="/reserve-meeting">Reserve Session</Link>
+            <Link target="_blank" href="https://wa.me/994559514280">
+              Reserve Session
+            </Link>
           </Button>
         </div>
       </div>

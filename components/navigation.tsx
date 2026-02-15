@@ -93,6 +93,15 @@ export function Navigation() {
               </Button> */}
               <Button variant="default" size="sm" asChild>
                 <Link
+                  target="_blank"
+                  href="https://wa.me/994559514280"
+                  rel="noopener noreferrer"
+                >
+                  Contact Us
+                </Link>
+              </Button>
+              <Button variant="default" size="sm" asChild>
+                <Link
                   target="blank"
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdnQH8aIQbrU3t2HaVln-cPq-F4cd1r3MgLYoJ2-dANDOfGMw/viewform"
                 >
@@ -158,7 +167,17 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-4 border-t border-border">
+          <div className="pt-4 border-t border-border space-y-3">
+            <Button variant="default" size="sm" className="w-full" asChild>
+              <Link
+                target="_blank"
+                href="https://wa.me/994559514280"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </Button>
             <Button variant="default" size="sm" className="w-full" asChild>
               <Link
                 target="blank"

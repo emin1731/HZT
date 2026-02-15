@@ -19,28 +19,28 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    id: "3",
-    name: "Elshan Huseynzada",
+    id: "1",
+    name: "Khuraman Guliyeva",
     role: "Founder & Director",
+    bio: "Description of the student",
+    initials: "KG",
+    photo: "/khuraman-guliyeva.jpeg",
+  },
+  {
+    id: "2",
+    name: "Elshan Huseynzada",
+    role: "Operations Lead",
     bio: "Description of the student",
     initials: "EH",
     photo: "/elshan-huseynzada.jpeg",
   },
   {
-    id: "1",
+    id: "3",
     name: "Ulvi Asadli",
     role: "Community Outreach Lead",
     bio: "Description of the student",
     initials: "UA",
     photo: "/ulvi-asadli.jpeg",
-  },
-  {
-    id: "2",
-    name: "Khuraman Guliyeva",
-    role: "Program Manager & Operations Lead",
-    bio: "Description of the student",
-    initials: "KG",
-    photo: "/khuraman-guliyeva.jpeg",
   },
 ];
 
@@ -130,6 +130,14 @@ const mentors: Mentor[] = [
     expertise:
       "Amerika Akkreditasiya Assosiasiyası tərəfindən sertifikatlaşdırılmış təlimçi və “Böyük Dayaq” İctimai Birliyinin təsisçisi",
     photo: "/narmin-nizam.jpeg",
+  },
+  {
+    id: "12",
+    name: "Rəfiq",
+    surname: "Mərdanov",
+    expertise:
+      "Beyin Yatırım Tədris Mərkəzinin təsisçisi,ölkədə ingilis dili fənni üzrə ilk dinləmə və oxu testlərinin həm-müəllifi  və ingilis dili müəllimi",
+    photo: "/rafig-merdanov.jpeg",
   },
 ];
 
