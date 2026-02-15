@@ -13,9 +13,9 @@ export default function ArticlesPage() {
           Articles & Insights
         </h1>
         <p className="text-xl text-foreground/80 text-pretty leading-relaxed">
-          Thought leadership on girls' education, mentorship, social inclusion,
-          and personal development. Our team shares insights and reflections
-          from the work we do.
+          Thought leadership on students' education, mentorship, social
+          inclusion, and personal development. Our team shares insights and
+          reflections from the work we do.
         </p>
       </ScrollSection>
 

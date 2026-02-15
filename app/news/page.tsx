@@ -21,7 +21,7 @@ export default function NewsPage() {
         </h1>
         <p className="text-xl text-foreground/80 text-pretty leading-relaxed">
           Stay informed about our latest announcements, events, and milestones
-          as we continue to grow and serve more girls.
+          as we continue to grow and serve more students.
         </p>
       </ScrollSection>
 
