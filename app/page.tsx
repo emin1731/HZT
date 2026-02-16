@@ -32,7 +32,7 @@ const teamMembers: TeamMember[] = [
     role: "Operations Lead",
     bio: "Description of the student",
     initials: "EH",
-    photo: "/elshan-huseynzada.jpeg",
+    photo: "/Elshan.jpeg",
   },
   {
     id: "3",
